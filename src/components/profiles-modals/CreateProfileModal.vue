@@ -36,7 +36,6 @@ export default class CreateProfileModal extends Vue {
     }
 
     // User confirmed creation of a new profile with a name that didn't exist before.
-    // The profile can be either empty or populated via importing.
     async createProfile() {
         const safeName = this.makeProfileNameSafe(this.newProfileName);
         if (safeName !== '') {
