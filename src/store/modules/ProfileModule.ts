@@ -119,6 +119,16 @@ export default {
     },
 
     mutations: {
+        resetNonGlobalState(state: State) {
+            state.activeProfile = null;
+            state.modList = [];
+            state.order = undefined;
+            state.direction = undefined;
+            state.disabledPosition = undefined;
+            state.searchQuery = '';
+            state.dismissedUpdateAll = false;
+        },
+
         dismissUpdateAll(state: State) {
             state.dismissedUpdateAll = true;
         },
@@ -290,6 +300,11 @@ export default {
             commit('setOrder', settings.getInstalledSortBy());
             commit('setDirection', settings.getInstalledSortDirection());
             commit('setDisabledPosition', settings.getInstalledDisablePosition());
+        },
+
+        async reset({commit, rootGetters}) {
+            await rootGetters['settings'].setProfile('Default');
+            commit('resetNonGlobalState');
         },
 
         async resolveConflicts(
