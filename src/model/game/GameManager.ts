@@ -20,7 +20,8 @@ export default class GameManager {
             'Risk of Rain 2', ['Risk of Rain 2.exe'], 'Risk of Rain 2_Data',
             'https://thunderstore.io/api/v1/package/', EXCLUSIONS,
             [
-                new StorePlatformMetadata(StorePlatform.STEAM, "632360"),
+                new StorePlatformMetadata(StorePlatform.STEAM, "450540"),
+				new StorePlatformMetadata(StorePlatform.OTHER),
                 new StorePlatformMetadata(StorePlatform.EPIC_GAMES_STORE, "4b3dcc5723454a47a9112d8fe8fd5f5c"),
             ], "RiskOfRain2.jpg",
             GameSelectionDisplayMode.VISIBLE, GameInstanceType.GAME, PackageLoader.BEPINEX, ["ROR2"]),
@@ -730,3 +731,4 @@ export default class GameManager {
             : undefined;
     }
 }
+
